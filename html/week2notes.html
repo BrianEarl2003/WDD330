@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8"/>
+    <title>Brian's WDD 330 Portfolio</title>
+    <!--CSS modifications-->
+    <link rel="stylesheet" type="text/css" href="css/index.css">
+    <!--Bootstrap and JQuery-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  </head>
+
+  <body>
+    <header>
+      <h1>Brian Earl's WDD 330 Portfolio</h1>
+    </header>
+    <h2>Week 2 Notes and Exercises (links)</h2>
+        <h3>Programming Basics</h3>
+        <p>
+          - // single line comment<br>
+          - /* multi-line comment */<br>
+          - Reserved words: abstract, await, boolean, break, byte, case, catch, char, class, const,<br>
+            continue, debugger, default, delete, do, double, else, enum, export, extends, false, final, <br>
+            finally, float, for, function, goto, if, implements, import, in instanceof, int, interface, let, <br>
+            long, native, new, null, package, private, protected, public, return, short, static, super, switch,<br>
+            synchronized, this, throw, throws, transient, true, try, typeof, var, volatile, void, while, with, yield<br>
+          - Not Reserved But Should Be: undefined, NaN, Infinity<br>
+          - typeof: finds out type of a value like a String, Symbol, Number, Boolean, Undefined, Null and Object<br>
+          - The keyword const is used when the variable will not be reassigned to another value<br>
+          - let is used if the variable might be reassigned later in the program.<br>
+          - The value of a constant object can be changed.<a href="https://codepen.io/brianearl2003/pen/VwaqyJO"> Mutating a constant object Exercise</a><br>
+          - <a href="https://codepen.io/brianearl2003/pen/gOrqMev"> Assignment by reference Exercise</a><br>
+          - <a href="https://codepen.io/brianearl2003/pen/MWyLjaa"> Template Literals Exercise</a><br>
+          - They can be used to create unique values, which helps to avoid any naming collisions.<br>
+          - Symbols are the only primitives that don't have a literal form. The only way to create them is to use the Symbol() function<br>
+          - toExponential() method: this returns the number as a string in exponential notation.<br>
+          - The toFixed() method rounds a number to a fixed number of decimal places:<br>
+          - The toPrecision() method rounds a number to a fixed number of significant figures that is once again returned as a string (and often using exponential notation)<br>
+          - You can check if a value is a number that can be used by using the Number.isFinite() method. This will return true if the value is a number that isn't Infinity , -Infinity or NaN<br>
+        </p>
+        <h3>Arrays, Logic, and Loops</h3>
+        <p>
+          - You don’t even have to use the same types of items inside an array. This array contains a variety different data types, as well as an empty array object:<br>
+           const mixedArray = [ null, 1, [], 'two', true ];<br>
+          - delete avengers[3]; avengers; // ['Captain America', 'Iron Man', 'Thor', undefined]<br>
+          - const [x,y] = [1,2];<br>
+          - The shift() method works in a similar way to the pop() method, but this removes thefirstitem in the array<br>
+          - The unshift() method is similar to the push() method, but this appends a new item to thebeginningof the array<br>
+          - The spread operator is three dots, ... that are placed in front of an array, with the effect of spreading out the elements of that array.<br>
+          - <a href="https://codepen.io/brianearl2003/pen/PoNVGdM"> The join() Method Exercise</a><br>
+          - avengers.slice(2,4) // starts at the third item (index of 2) and finishes at the fourth (the item with index 4 is not included) //['Thor', 'Hulk']<br>
+          - avengers.splice(3, 1, 'Scarlet Witch'); //['Hulk'] is replaced with Scarlet Witch<br>
+          - reverse the order of an array using the reverse() method<br>
+          - sort the order of an array using the sort() method<br>
+          - find out if an array contains a particular value using the indexOf() method to find the first occurrence of a value in an array<br>
+          - the includes() method. This returns a boolean value depending on whether the array contains a particular element or not<br>
+          - const shoppingArray = [...shoppingSet]  OR const shoppingArray = Array.from(shoppingSet);<br>
+          - const weak = new WeakSet(); weak sets behave in the same way as regular sets, and have the has() , add() , and delete() methods that work in the same way.<br>
+          - const weak = new WeakMap(); Weak maps can use the has() , get() , set() and delete() methods in the same way as a regular map.<br>
+        </p>
+        <h3>Functions</h3>
+        <p>
+            - Anonymous function: const goodbye = function(){}; Named function: const goodbye = function bye(){};<br>
+            - function() Constructors: const hi = new Function('console.log("Hi World!");'); //not recommended<br>
+            - If you have assigned a function to a variable, you need to place parentheses after the variable to invoke it as a function: goodbye();<br>
+            - <a href="https://codepen.io/brianearl2003/pen/xxVMjeW"> Parameters and Arguments Exercise</a><br>
+            - computers use base 2 in the background and therefore struggle to represent any fractions where the denominator is not a power of 2<br>
+            - <a href="https://codepen.io/brianearl2003/pen/xxVMzOa"> Rest operator and args parameter Exercise</a><br>
+            - <a href="https://codepen.io/brianearl2003/pen/YzqBvvz"> Improved Mean Function Exercise</a><br>
+            - <a href="https://codepen.io/brianearl2003/pen/oNxmMvg"> Default Parameters Exercise</a><br>
+            - Default parameters should always come after non-default parameters, otherwise default values will always have to be entered anyway.<br>
+            - The parameters come before the arrow and the main body of the function comes after. const square = x => x*x;<br>
+            - The return keyword isn't required if the return statement is the only statement in the body of the function<br>
+            - More than one Parameters: const add = (x,y) => x + y;<br>
+            - No parameters: const hello = () => alert('Hello World!');<br>
+            - Functions that are defined using a function declaration are automatically hoisted, meaning they can be invoked before they have been defined.<br>
+            - Variable declarations that use the var keyword are automatically moved to the top of the current scope. Variable assignment is not hoisted<br>
+            - <a href="https://codepen.io/brianearl2003/pen/gOrqjKo"> Callbacks Exercise</a><br>
+            - <a href="https://codepen.io/brianearl2003/pen/VwagEbO"> Sorting Arrays With A Callback Exercise</a><br>
+            - <a href="https://codepen.io/brianearl2003/pen/dyMagmx"> forEach() Exercise</a><br>
+            -  It also iterates over an array, and takes a callback function as a parameter that is invoked on each item in the array.<br>
+            - <a href="https://codepen.io/brianearl2003/pen/eYZxPPj"> map() Exercise</a><br>
+            - The reduce() method is another method that iterates over each value in the array, but this time it cumulatively combines each result to return just a single value.<br>
+            - The filter() method returns a new array that only contains items from the original array that return true when passed to the callback.<br>
+            - <a href="https://codepen.io/brianearl2003/pen/LYNqgKP"> Chaining Iterators Together Exercise</a><br>
+        </p>
+        
+  </body>
+</html>
