@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8"/>
+    <title>Week 3 Notes and Exercises</title>
+    <!--CSS modifications-->
+    <link rel="stylesheet" type="text/css" href="css/index.css">
+    <!--Bootstrap and JQuery-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  </head>
+
+  <body>
+    <header>
+      <h1>Brian Earl's WDD 330 Portfolio</h1>
+    </header>
+    <h2>Week 3 Notes and Exercises (links)</h2>
+        <h3>Object Methods: this</h3>
+        <p>
+          - <a href="https://codepen.io/brianearl2003/pen/zYqQzEm"> "this" in Methods Exercise</a><br>
+          - When a function is declared, it may use this, but that this has no value until the function is called.<br>
+          - A function can be copied between objects.<br>
+          - When a function is called in the “method” syntax: object.method(), the value of this during the call is object.<br>
+          - <a href="https://codepen.io/brianearl2003/pen/yLOWXrq"> Calculator Exercise</a><br>
+          - <a href="https://codepen.io/brianearl2003/pen/RwamgXG"> Chaining Exercise</a><br>
+        </p>
+        <h3>Ch5: Objects</h3>
+        <p>
+          - 'real name': 'Clark Kent', The property 'real name' in the example above needs to be quoted because it contains a space.<br>
+          - const spiderman = new Object(); = {};<br>
+          - const name = 'Iron Man'; const realName = 'Tony Stark'; const ironMan = { name, realName };<br>
+          - superman.fly()    superman['fly']()<br>
+          - 'city' in superman;  superman.hasOwnProperty('city');<br>
+          - for(const [key,value] of Object.entries(superman)) {console.log(`${key}: ${value}`);}<br>
+          - <a href="https://codepen.io/brianearl2003/pen/jOqjNjq"> Super Object Exercise</a><br>
+          - <a href="https://codepen.io/brianearl2003/pen/ExKBxZR"> Objects as Parameters to Functions Exercise</a><br>
+          - <a href="https://codepen.io/brianearl2003/pen/poyXvyZ"> "this" Dice Roll Exercise</a><br>
+          - Math.PI // The ratio of the circumference and diameter of a circle
+          << 3.141592653589793<br>
+          Math.SQRT2 // The square root of 2
+          << 1.4142135623730951<br>
+          Math.SQRT1_2 // The reciprocal of the square root of 2
+          << 0.7071067811865476<br>
+          Math.E // Euler's constant
+          << 2.718281828459045<br>
+          Math.LN2 // The natural logarithm of 2
+          << 0.6931471805599453<br>
+          Math.LN10 // The natural logarithm of 10
+          << 2.302585092994046<br>
+          Math.LOG2E // Log base 2 of Euler's constant
+          << 1.4426950408889634<br>
+          Math.LOG10E // Log base 10 of Euler's constant
+          << 0.4342944819032518<br>
+          - absolute value -> Math.abs()<br>
+          - round a number up to the next integer -> Math.ceil()<br>
+          - round a number down to the next integer -> Math.floor()<br>
+          - The Math.round() method will round a number to thenearestinteger<br>
+          -  Math.trunc() method that returns the integer-part of a number – that is, it gets truncated at the decimal point<br>
+          - The Math.exp() method will raise a number to the power of Euler’s constant<br>
+          - The Math.pow() method will raise any number (the first argument) to the power of another number (the second argument)<br>
+          - The Math.sqrt() method returns the positive square root of a number<br>
+          - The Math.cbrt() method was introduced in ES6, which returns the cube root of numbers<br>
+          - The Math.hypot() method was also introduced in ES6. It returns the square root of the sum of the squares of all its arguments. This can be used to calculate the hypotenuse of a right-angled triangle<br>
+          - The Math.log() method returns the natural logarithm of a number<br>
+          - Math.log2(); Math.log10();<br>
+          - The Math.max() method returns the maximum number from its arguments<br>
+          - Math.min() method unsurprisingly returns the minimum number from the given arguments<br>
+          - The Math.sin() returns the sine of an angle<br>
+          - The Math.cos() returns the cosine of an angle<br>
+          - The Math.tan() returns the tangent of an angle<br>
+          - The Math.asin() returns the arcsine of a number.<br>
+          - The Math.acos() returns the arccosine of a number.<br>
+          - The Math.atan() returns the arctangent of a number.<br>
+          - sinh() , cosh() and tanh(). asinh() , acosh() and atanh()<br>
+          - new Date(year,month,day,hour,minutes,seconds,milliseconds)<br>
+          - const pattern = /[a-zA-Z]+ing$/;<br>
+          - pattern.test('joking');<br>
+          - The exec() method works in the same way as the test() method, but instead of returning true or false , it returns an array containing the first match found, or null if there aren’t any matches
+        </p>
+        <h3>Ch6: Document Object Model</h3>
+        <p>
+            - use the nodeType property to find out what type of node it is<br>
+            - use the nodeName property to find the name of the element<br>
+            - wonderWoman.setAttribute('class', 'villain');
+            << undefined<br>
+            wonderWoman.getAttribute('class');
+            << "villain"<br>
+            - wonderWoman.classList.add('warrior');<br>
+            - wonderWoman.classList.remove('warrior');<br>
+            - wonderWoman.classList.toggle('hero');<br>
+            - wonderWoman.classList.contains('hero');<br>
+            - const flash = document.createElement('li');<br>
+            - const flashText = document.createTextNode('Flash');<br>
+            - flash.appendChild(flashText);<br>
+            - <a href="https://codepen.io/brianearl2003/pen/XWdLmre"> Suicide Squad and Justice League Exercise</a><br>
+            - <a href="https://codepen.io/brianearl2003/pen/JjXQYba"> Updating CSS Exercise</a><br>
+        </p>
+        <h3>Ch7: Events</h3>
+        <p>
+            - addEventListener('click', () => alert('You Clicked!'));<br>
+            - event.type<br>
+            - event.target<br>
+            - <a href="https://codepen.io/brianearl2003/pen/vYGqdRr"> The Event Target Exercise</a><br>
+            - touch event objects have a property called touches. This is a list of touch objects that represents all the touches taking place on that device. It has a length property that tells you how manytouch points(usually the user's fingers, but could be a stylus) are in contact with the surface. Each touch object in the list can be accessed using index notation.<br>
+            - touch.screenX and touch.screenY to find the coordinates of the touch point.<br>
+            - touch.radiusX and touch.radiusY , which give an indication of the area covered by the touch, and touch.force , which returns the amount of pressure being applied by the touch as a value between 0 and 1 .<br>
+            - touch.identifier property, a unique ID that can be used to ensure you are dealing with the same touch.<br>
+            - <a href="https://codepen.io/brianearl2003/pen/QWNXmEN"> Many More Events Exercises</a><br>
+        </p>
+  </body>
+</html>
