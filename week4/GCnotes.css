@@ -1,0 +1,25 @@
+body {
+    background-color: black;
+}
+
+header {
+    text-align: center;  
+    align-items: center; 
+    margin-left: 10%;
+    margin-right: 10%; 
+}
+
+header, h3, h2, p {
+    background-image: url("https://scienceatl.org/wp-content/uploads/2018/07/heading-background.jpg");
+    border: 1px solid black;
+    border-radius: 30px;
+    color: white;
+    display: inline-block;
+    padding: 2%;
+}
+
+h2, header {
+    color: black;
+    font-weight: bold;
+    border: 2px solid white;
+}
