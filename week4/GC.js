@@ -53,24 +53,19 @@ const sessionController = {
         }, false);
     },
     add(season, year, day, time) {
-        const session = new Session(season);
-        const session = new Session(year);
-        const session = new Session(day);
-        const session = new Session(time);
+        let session = new Session(season);
+        session = new Session(year);
+        session = new Session(day);
+        session = new Session(time);
         sessionView.render(session);
     }
 };
 
 const sessionView = {
     render(session) {
-        ///const list = document.getElementById('list');
-        //const li = document.createElement('li');
-        //li.innerHTML = item.name;
-        //list.appendChild(li);
         let html1 = '';
         html1 += '<hr><h2>General Conference ' + (session.season) + ' ' + (session.year) + ' ' + (session.day) + ' ' + (session.time) + '</h2>'; // convert object to JSON string and display in alert dialog
         $('#newNotes').append(html1);
-        // reset the input field
     }
 };
 
@@ -84,20 +79,15 @@ const speakerController = {
         }, false);
     },
     add(name, subject, notes) {
-        const speaker = new Speaker(name);
-        const speaker = new Speaker(subject);
-        const speaker = new Speaker(notes);
+        let speaker = new Speaker(name);
+        speaker = new Speaker(subject);
+        speaker = new Speaker(notes);
         speakerView.render(speaker);
     }
 };
 
 const speakerView = {
     render(speaker) {
-        //const list = document.getElementById('list');
-        //const li = document.createElement('li');
-        //li.innerHTML = item.name;
-        //list.appendChild(li);
-        // reset the input field
         let nameHeading = '';
         nameHeading += '<hr><h3>' + (speaker.name) + ' - ' + (speaker.subject) + '</h3><br><p>' + (speaker.notes) + '</p>';
         $('#newNotes').append(nameHeading);
@@ -131,6 +121,9 @@ function session(event) {
     sessionObject.year = year.value;
     sessionObject.day = day.value;
     sessionObject.time = time.value;
+    /*speakerArray[speakerArray.length] = sessionObject;
+    let sessionString = JSON.stringify(speakerArray);
+    localStorage.setItem('speakerArray',  sessionString);*/
     session += '<hr><h2>General Conference ' + (sessionObject.season) + ' ' + (sessionObject.year) + ' ' + (sessionObject.day) + ' ' + (sessionObject.time) + '</h2>'; // convert object to JSON string and display in alert dialog
     $('#newNotes').append(session);
 }
@@ -140,52 +133,49 @@ form2.addEventListener('submit', speakerNameNotes, false);
 function speakerNameNotes(event) {
     let nameHeading = '';
     event.preventDefault(); // prevent the form from being submitted
-    
     const speaker = {}; // create an empty object
-    
     speaker.name = input.value; // create a name property based on the input field's value
     speaker.note = notes.value;
     speaker.subject = subject.value;
     speakerArray[speakerArray.length] = speaker;
     console.log(speakerArray);
-    /*speakerArray[speakerArray.length] = speaker.subject;
-    speakerArray[speakerArray.length] = speaker.note;*/
-    //localStorage.setItem('speakername', speaker.name);
-    //localStorage.setItem('speakernote', speaker.note);
-    //localStorage.setItem('speakersubject', speaker.subject);
-    //speakerArray[speakerArray.length] = speaker;
     let speakerString = JSON.stringify(speakerArray);
     console.log(speakerString);
     localStorage.setItem('speakerArray',  speakerString);
-    //nameHeading += '<hr><h3>' + localStorage.getItem('speakername') + ' - ' + localStorage.getItem('speakersubject') + '</h3><br><p>' + localStorage.getItem('speakernote') + '</p>'; // convert object to JSON string and display in alert dialog
     nameHeading += '<hr><h3>' + (speaker.name) + ' - ' + (speaker.subject) + '</h3><br><p>' + (speaker.note) + '</p>';
     $('#newNotes').append(nameHeading);
-    //loadView(speakerArray);
 }
-
-window.addEventListener('load', loadView(speakerArray));
 
 function loadData() {
     let newArray = localStorage.getItem('speakerArray');
     if (newArray !== null) {
         newArray = JSON.parse(newArray);
         console.log(newArray);
-        //loadInfo += '<hr><h3>' + localStorage.getItem('speakername') + ' - ' + localStorage.getItem('speakersubject') + '</h3><br><p>' + localStorage.getItem('speakernote') + '</p>';
-        
     } else {
         newArray = [];
     }
     return newArray;
 }
 
+window.addEventListener('load', loadView(speakerArray));
+
 function loadView(newArray) {
     let loadInfo = '';
     //for (session of sessions) {
     //    $('#test').append(session);
     //    for (speaker of session.speakers) {
-        for (speaker of newArray) {
-            loadInfo = '<hr><h3>' + speaker.name + ' - ' + speaker.subject + '</h3><br><p>' + speaker.note + '</p>';
-            $('#test').append(loadInfo);  
-        }
+    //for (let i = 0; i < newArray.length; i++) {
+        //if (newArray instanceof speaker) {
+            for (speaker of newArray) {
+                loadInfo = '<hr><h3>' + speaker.name + ' - ' + speaker.subject + '</h3><br><p>' + speaker.note + '</p>';
+                $('#test').append(loadInfo);  
+            }
+        //} else {
+        //if (newArray[i] instanceof sessionObject) {
+            /*for (sessionObject of newArray) {
+                loadInfo = '<hr><h2>General Conference ' + sessionObject.season + ' ' + sessionObject.year + ' ' + sessionObject.day + ' ' + sessionObject.time + '</h2>';
+                $('#test').append(loadInfo);  
+            }*/
+        //}   
     //}
 }
