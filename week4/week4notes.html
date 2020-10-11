@@ -14,22 +14,35 @@
       <h1>Brian Earl's WDD 330 Portfolio</h1>
     </header>
     <h2>Week 4 Notes and Exercises (links)</h2>
-        <a href="GeneralConferenceProject.html">General Conference Notes Project</a><br>
-        <h3></h3>
+        <a href="GeneralConferenceProject.html">General Conference Notes Project (Forms, OOP and Modern JS Exercise)</a><br>
+        <h3>8. Forms</h3>
         <p>
-          - <br>
-          - <br>
-          - <br>
-          - <br>
-          - <br>
+          - const form = document.forms.search;<br>
+          - If the form had the same name as any properties or methods of the document.forms object, such as 'submit', for example, that property or method would be referenced instead of the form element.<br>
+          - input.addEventListener('change', () => alert('changed'), false);<br>
+          - the alert message 'changed' only appears if you actually change the value inside the search box, then move the cursor away from it<br>
+          - event.preventDefault();<br>
+          - stop the form from being submitted to that URL altogether by using the preventDefault() method<br>
+          - const hero = {}; <br>
+          - create a local variable called hero and assign it to an empty object literal<br>
+          - hero.name = form.heroName.value;<br>
+          - create a name property based on the input field's value<br>
+          - &lt;label for='age'>Age:&lt;input type='number' id='age' name='age' min=0 step=1>&lt;/label><br>
+          - Number input fields also have optional 'min' and 'max' attributes that can be used to limit the input given. The 'step' attribute is used to specify how much the value changes by each click.<br>
+          - Select drop-down lists can be used to select one or more options from a list of values. The 'multiple' attribute is required if more than one option is to be selected.<br>
+          - A &lt;textarea> element is used to enter long pieces of text over multiple lines such as a comment or blog post. They work in much the same way as input fields. We access them using the 'name' attribute, and use the value property to see what text was entered.<br>
+          - &lt;button type='reset'>Reset&lt;/button><br>
+          - 'reset', which will reset all the form fields to their initial settings.<br>
         </p>
-        <h3></h3>
+        <h3>12. Object-Oriented Programming in JavaScript</h3>
         <p>
-          - <br>
-          - <br>
-          - <br>
-          - <br>
-          - <br>
+          - <a href="https://codepen.io/brianearl2003/pen/MWeYRqm">Constructor Functions Dice Exercise</a><br>
+          - <a href="https://codepen.io/brianearl2003/pen/ExyaJOE">Prototype Ninja Turtle Exercise</a><br>
+          - <a href="https://codepen.io/brianearl2003/pen/xxObeeJ">Creating Objects from Objects Superhuman Exercise</a><br>
+        </p>
+        <h3>15. Modern JavaScript Development</h3>
+        <p>
+          - <a href="https://codepen.io/brianearl2003/pen/KKMpVrN">A Quick List MVC Example</a><br>
         </p>
   </body>
 </html>
