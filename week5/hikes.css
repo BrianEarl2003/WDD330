@@ -1,0 +1,26 @@
+h1, h2 {
+    text-align: center;
+    display: block;
+    background-color: lightseagreen;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+li {
+    list-style: none;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+
+.image {
+    background-color: lightsalmon;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+.list {
+    display: grid;
+    align-items: center; 
+}
+
+
+

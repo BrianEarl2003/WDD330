@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8"/>
+    <title>Week 5 Notes and Exercises</title>
+    <!--CSS modifications-->
+    <link rel="stylesheet" type="text/css" href="css/index.css">
+    <!--Bootstrap and JQuery-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  </head>
+
+  <body>
+    <header>
+      <h1>Brian Earl's WDD 330 Portfolio</h1>
+    </header>
+    <h2>Week 5 Notes and Exercises (links)</h2>
+        <a href="todoApp.html">Todo Application</a><br>
+        <h3>10. Testing and Debugging</h3>
+        <p><Strong></Strong>
+          - An <Strong>exception</Strong> is an error that produces a return value that can then be used by the program to deal with the error.<br>
+          - <Strong>Stack Traces</Strong> are a sequence of functions or method calls that lead to the point where the error occurred.<br>
+          - A <Strong>warning</Strong> can occur if there’s an error in the code that isn't enough to cause the program to crash.<br>
+          - <Strong>Strict mode</Strong> ('use strict';) produces more exceptions and warnings and prohibits the use of some deprecated features. This is due to the fact that strict mode considers coding practices that were previously accepted as just being 'poor style' as actual errors.<br>
+          - <Strong>alert()</Strong> stops a program from running until OK is clicked and it allows us to effectively put breakpoints in the code that let us check the value of variables at that point to see if they’re what we expect them to be. <br>
+          - <a href="https://codepen.io/brianearl2003/pen/XWKmxNz">Alert() & console excercise</a><br>
+          - The <Strong>console.trace()</Strong> method will log an interactive stack trace in the console. This will show the functions that were called in the lead up to an exception occurring while the code is running.<br>
+          - <Strong>(debugger;)</Strong> will create a breakpoint in your code that will pause the execution of the code and allow you to see where the program is currently up to. You can also hover over any variables to see what value they hold at that point. The program can then be restarted by clicking on the 'play' button.<br>
+          - An <Strong>error object</Strong> can be created by the host environment when an exception occurs, or it can be created in the code using a constructor function<br>
+          - const error = new Error('Oops, something went wrong');<br>
+          - const error = new TypeError('You need to use numbers in this function');<br>
+          - The <Strong>name</Strong> property returns the name of the error constructor function used as a string, such as 'Error' or 'ReferenceError'.<br>
+          - The <Strong>message</Strong> property returns a description of the error and should be provided as an argument to the Error constructor function.<br>
+          - The <Strong>stack</Strong> property will return a stack trace for that error. This is a non-standard property and it’s recommended that it is not safe to use in production sites.<br>
+          - throw new Error('Something has gone badly wrong!');<br>
+          - <a href="https://codepen.io/brianearl2003/pen/WNxQaWj">try, catch, and finally exercise</a><br>
+        </p>
+  </body>
+</html>
