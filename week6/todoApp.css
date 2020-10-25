@@ -1,0 +1,101 @@
+/*HEADER*/
+header {
+    border: 1px solid black;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0;
+    overflow: hidden;
+    background-color:  #0077c1;
+    width: 100%;
+}
+
+h1 {
+    font-size: 30px;
+    display: block;
+    color: white;
+    font-weight: 700;
+    font-family: 'Waiting for the Sunrise', cursive;
+    text-align: center;
+    padding: 1% 1%;
+    text-decoration: none;
+}
+/*FILTER BAR*/
+#menuBar {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    justify-content: space-evenly;
+    border: 1px solid black;
+    list-style-type: none;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0;
+    overflow: hidden;
+    background-color:  #0077c1;
+    width: 100%;
+}
+
+.btn {
+    background-color: #0077c1;
+    font-size: 22px;
+    display: block;
+    color: white;
+    font-weight: 700;
+    font-family: 'Waiting for the Sunrise', cursive;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none; 
+    width: 100%;
+    cursor: pointer;
+}
+
+.btn:hover {
+    background-color: rgb(250, 250, 250);
+    color: black;
+}
+
+.active {
+    background-color: black;
+    color: white;
+}
+
+#tasksLeft {
+    font-size: 22px;
+    display: block;
+    color: white;
+    font-weight: 700;
+    font-family: 'Waiting for the Sunrise', cursive;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none; 
+}
+/*Task List*/
+label {
+    font-size: 24px;
+    font-weight: bold;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+.taskList {
+    border: 1px solid black;
+    list-style-type: none;
+}
+
+.hidden {
+    display: none;
+}
+
+#table {
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0;
+    overflow: hidden;
+    width: 100%;
+}
+
+.delete {
+    float: right;
+}
+/*Add Task*/
+#taskName {
+    width: 94.6%;
+}

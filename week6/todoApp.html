@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+  <head>
+    <meta charset="utf-8" />
+    <title>Brian Earl's Todo Application</title>
+    <!--CSS modifications-->
+    <link rel="stylesheet" type="text/css" href="todoApp.css">
+    <!--Bootstrap and JQuery-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  </head>
+
+  <body>
+
+    <header>
+      <h1>Brian Earl's Todos Application</h1>
+    </header>
+
+    <form name='taskForm' id='taskForm'>
+      <ul id="table"></ul>
+      <ul id="menuBar">
+        <div id="tasksLeft"></div>
+        <button class="btn active" id="allButton" type="button">All</button>
+        <button class="btn" id="activeButton" type="button">Active</button>
+        <button class="btn" id="completedButton" type="button">Completed</button>
+      </ul>
+      <div id="inputButton">
+        <input name='taskName' id='taskName' placeholder="new task" type="text">
+        <button id='addButton' onclick='addTask()' type='button'>+</button>
+      </div>
+    </form>
+
+    <script src="todoApp.js"></script>
+
+  </body>
+</html>
