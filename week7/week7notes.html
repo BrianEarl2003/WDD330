@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8"/>
+    <title>Week 7 Notes and Exercises</title>
+    <!--CSS modifications-->
+    <link rel="stylesheet" type="text/css" href="css/index.css">
+    <!--Bootstrap and JQuery-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  </head>
+
+  <body>
+    <header>
+      <h1>Brian Earl's WDD 330 Portfolio</h1>
+    </header>
+    <h2>Week 7 Notes and Exercises (links)</h2>
+        <h3>11. Further Functions</h3>
+        <p>
+          - <a href="https://codepen.io/brianearl2003/pen/PozRPeL">Properties for a function</a><br>
+          - <a href="https://codepen.io/brianearl2003/pen/xxOWwyp">The call() method</a><br>
+          - <a href="https://codepen.io/brianearl2003/pen/mdExevo">Immediately Invoked Function Expressions</a><br>
+          - <a href="https://codepen.io/brianearl2003/pen/gOMePoa">Functions that Define and Rewrite Themselves</a><br>
+          - A <Strong>promise</Strong> represents the future result of an asynchronous operation.<br>
+          - Resolved ― the asynchronous operation was completed successfully.<br>
+          - Rejected ― the asynchronous operation didn’t work as expected, wasn't successfully completed or resulted in an error.<br>
+          - <a href="https://codepen.io/brianearl2003/pen/zYBWKge">Generalized Functions</a><br>
+          - <a href="https://codepen.io/brianearl2003/pen/VwjXmLv">Closure and counter</a><br>
+          - function* exampleGenerator() {<br>
+            // code for the generator goes here<br>
+            }<br>
+          - A pure function is a function that adheres to the following rules:<br>
+          1) The return value of a pure function should only depend on the values provided as arguments. It doesn't rely on values from somewhere else in the program.<br>
+          2) There are no side-effects. A pure function doesn't change any values or data elsewhere in the program. It only makes non-destructive data transformations and returns new values, rather than altering any of the underlying data.<br>
+          3) Referential transparency. Given the same arguments, a pure function will always return the same result.<br>
+          - In order to follow these rules, any pure function must have:<br>
+          At least one argument; otherwise the return value must depend on something other than the arguments of the function, breaking the first rule<br>
+          A return value; otherwise there’s no point in the function (unless it has changed something else in the program – in which case, it’s broken the 'no side-effects' rule).<br>
+        </p>
+        <h3>13. AJAX</h3>
+        <p>
+          - <Strong>Asynchronous:</Strong> When a request for data is sent, the program doesn’t have to stop and wait for the response. It can carry on running, waiting for an event to fire when a response is received. By using callbacks to manage this, programs are able to run in an efficient way, avoiding lag as data is transferred back and forth.<br>
+          - <Strong>JavaScript:</Strong> JavaScript was always considered a 'front-end' language, not used to communicate with the server. Ajax enabled JavaScript to send requests and receive responses from a server, allowing content to be updated in real time.<br>
+          - <Strong>XML:</Strong> When the term Ajax was originally coined, XML documents were often used to return data. Many different types of data can be sent, but by far the most commonly used in Ajax nowadays is JSON, which is more lightweight and easier to parse than XML. (Although it has never really taken off, the termAjaj is sometimes used to describe the technique.)JSON also has the advantage of being natively supported in JavaScript, so you can deal with JavaScript objects rather than having to parse XML files using DOM methods.<br>
+          - fetch('https://example.com/data')<br>
+          .then( // code that handles the response )<br>
+          .catch( // code that runs if the server returns an error )<br>
+          - fetch(url)<br>
+          .then( response => response.json() ); // transforms the JSON data into a JavaScript object<br>
+          .then( data => console.log(Object.entries(data)) )<br>
+          .catch( error => console.log('There was an error: ', error))<br>
+          - const response = new Response( 'Hello!', {<br>
+            ok: true,<br>
+            status: 200,<br>
+            statusText: 'OK',<br>
+            type: 'cors',<br>
+            url: '/api'<br>
+        });<br>
+          - <a href="https://codepen.io/brianearl2003/pen/abZYKNr">Headers Interface</a><br>
+          - <a href="https://codepen.io/brianearl2003/pen/dyXmKwO">Chuck Norris is the only example you need.</a><br>
+          - <a href="https://codepen.io/brianearl2003/pen/QWEmBLY">Sending Information and Form Data</a><br>
+        </p>
+  </body>
+</html>
