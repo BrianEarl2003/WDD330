@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8"/>
+    <title>Week 8 Notes and Exercises</title>
+    <!--CSS modifications-->
+    <link rel="stylesheet" type="text/css" href="index.css">
+    <!--Bootstrap and JQuery-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  </head>
+
+  <body>
+    <header>
+      <h1>Brian Earl's WDD 330 Portfolio</h1>
+    </header>
+    <h2>Week 8 Notes and Exercises (links)</h2>
+        <h3>Ch8: CSS3 Transforms and Transitions</h3>
+        <p>
+          - <a href="https://codepen.io/brianearl2003/pen/YzWvvwb">Transform and Transition</a><br>
+          - transform: skew(15deg, 4deg);<br>
+          - transform-origin: 0 0;<br>
+          - Here are the steps to create a simple transition using only CSS:<br>
+          1. Declare the original state of the element in the default style declaration.<br>
+          2. Declare the final state of your transitioned element; for example, a :hover state.<br>
+          3. Include the transition functions in your default style declaration using the transition properties, including: transition-property , transition-duration , transition-timing-function , and transition-delay.<br>
+          - The exception to this “if there is a valid midpoint, it can be transitioned” rule is visibility: although there is no valid midpoint between the values visible and hidden , when transitioned, the value changes at the endpoint of the transition.<br>
+          - cubic-bezier function accepts four numeric parameters; for example, linear is the same as cubic-bezier(0, 0, 1, 1) . <br>
+          - For example, steps(5, start) would jump through the equidistant steps of 0%, 20%, 40%, 60%, and 80%, and steps(5, end) would jump throught the equidistant steps of 20%, 40%, 60%, 80%, and 100%.<br>
+          - <a href="https://codepen.io/brianearl2003/pen/VwjBavg">Bicycle Animation</a><br>
+        </p>
+        <h3>Ch12: Canvas, SVG, and Drag and Drop</h3>
+        <p>
+          - <a href="https://codepen.io/brianearl2003/pen/KKMBJBq">Canvas Blue Rectangle</a><br>
+          - <a href="https://codepen.io/brianearl2003/pen/MWeBLZQ">Canvas Bicycle Pattern</a><br>
+          - <a href="https://codepen.io/brianearl2003/pen/WNxKmRd">Canvas Gradient</a><br>
+          - <a href="https://codepen.io/brianearl2003/pen/VwjBRza">Canvas Draw Circle</a><br>
+          - <a href="https://codepen.io/brianearl2003/pen/QWEBoPJ">Saving Canvas Drawings</a><br>
+          - <a href="https://codepen.io/brianearl2003/pen/rNLrbWO">Drawing in SGV</a><br>
+          - <a href="https://codepen.io/brianearl2003/pen/qBNyeJV">Drawing an Image to Raphaël’s Container</a><br>
+          - There are several steps to adding drag and drop to your page:<br>
+          1. Set the draggable attribute on any HTML elements you’d like to be draggable.<br>
+          2. Add an event listener for the dragstart event on any draggable HTML elements.<br>
+          3. Add an event listener for the dragover and drop events on any elements that you want to have accept dropped items.<br>
+          - <a href="https://codepen.io/brianearl2003/pen/vYKzBjq">Draggable Cat and Mouse</a><br>
+        </p>
+  </body>
+</html>

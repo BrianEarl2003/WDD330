@@ -26,13 +26,22 @@ const links = [
     {
         label: "Week 7",
         url: "week7/"
+    },
+    {
+        label: "Week 8",
+        url: "week8/"
     }
 ]
 
 function displayLinks() {
-    var list = "";
-    for (i = 0; i < links.length; i++){
+    let list = "";
+    for (i = 0; i < 6; i++){
         list += "<li><a href=\"" + links[i].url + "\">" + links[i].label + "</a></li>"
     }
     $('#table').html(list);
+    let list2 = "";
+    for (i = 6; i < links.length; i++){
+        list2 += "<li><a href=\"" + links[i].url + "\">" + links[i].label + "</a></li>"
+    }
+    $('#table2').html(list2);
 }
