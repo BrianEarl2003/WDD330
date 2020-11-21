@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8"/>
+    <title>Week 10 Notes and Exercises</title>
+    <!--CSS modifications-->
+    <link rel="stylesheet" type="text/css" href="index.css">
+    <!--Bootstrap and JQuery-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  </head>
+
+  <body>
+    <header>
+      <h1>Brian Earl's WDD 330 Portfolio</h1>
+    </header>
+
+    <h2>Week 10 Notes and Exercises (links)</h2>
+
+    <a href="EarthquakeWatch/team/index.html">Earthquake Watch</a><br>
+
+        <h3>Client-side form validation</h3>
+        <p>
+          - <a href="https://codepen.io/brianearl2003/pen/abZgpeZ">Built-in form validation examples</a><br>
+          - required: Specifies whether a form field needs to be filled in before the form can be submitted.<br>
+          - minlength and maxlength: Specifies the minimum and maximum length of textual data (strings)<br>
+          - min and max: Specifies the minimum and maximum values of numerical input types<br>
+          - type: Specifies whether the data needs to be a number, an email address, or some other specific preset type. <br>
+          - pattern: Specifies a regular expression that defines a pattern the entered data needs to follow.<br>
+          - <a href="https://codepen.io/brianearl2003/pen/jOrjBbj">Constraining the values of your entries</a><br>
+          - <a href="https://codepen.io/brianearl2003/pen/wvWLJMR">Full example</a><br>
+          - <a href="https://codepen.io/brianearl2003/pen/QWEXpEX">Implementing a customized error message</a><br>
+          - <a href="https://codepen.io/brianearl2003/pen/oNLrZYG">A more detailed example</a><br>
+          - <a href="https://codepen.io/brianearl2003/pen/jOrjBBN">An example that doesn't use the constraint validation API</a><br>
+        </p>
+        <h3>Using Fetch</h3>
+        <p>
+          - The Promise returned from fetch() won’t reject on HTTP error status even if the response is an HTTP 404 or 500. Instead, it will resolve normally (with ok status set to false), and it will only reject on network failure or if anything prevented the request from completing.<br>
+          - fetch() can receive cross-site cookies; you can’t can establish a cross site session using fetch. <br>
+          - fetch won’t send cookies, unless you set the credentials init option.<br>
+          - <a href="https://codepen.io/brianearl2003/pen/MWeMpzj">Supplying request options</a><br>
+          - <a href="https://codepen.io/brianearl2003/pen/ZEOdeNe">Uploading a file</a><br>
+          - <a href="https://codepen.io/brianearl2003/pen/YzWoZmd">Uploading multiple files</a><br>
+          - Fetch API support can be detected by checking for the existence of Headers, Request, Response or fetch() on the Window or Worker scope. For example: window.fetch<br>
+        </p>
+  </body>
+</html>
