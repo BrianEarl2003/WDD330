@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+  <meta charset="utf-8" />
+  <title>General Conference Fall 2020 Notes</title>
+  <!--CSS modifications-->
+  <link rel="stylesheet" type="text/css" href="GCnotes.css">
+  <!--Bootstrap and JQuery-->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+</head>
+
+<body>
+  <header>
+    <h1>Brian Earl's WDD 330 Portfolio</h1>
+  </header>
+  <hr>
+  <form name='session' id='session'>
+    <label>General Conference Session<select name ='season' id='season'>
+      <option value='Spring'>Spring</option>
+      <option value='Fall'>Fall</option></label>
+    <input name='year' id='year' type='number' value='2020'>
+    <select name='day' id='day'>
+      <option value='Saturday'>Saturday</option>
+      <option value='Sunday'>Sunday</option></select>
+    <select name='time' id='time'>
+      <option value='Morning'>Morning</option>
+      <option value='Afternoon'>Afternoon</option>
+      <option value='Priesthood'>Priesthood</option>
+      <option value="Women's">Women's</option></select>
+    <button type='submit'>Create New Session</button></form><br><hr>
+    <form name='search' id='search' action='/search'>
+    <input name='searchInput' id='searchInput' placeholder="Name of Speaker">
+    <input name='subject' id='subject' placeholder="Subject"><br>
+    <textarea name='notes' id='notes' placeholder="Write notes here" rows='10' cols='130'></textarea><br>
+    <button type='reset'>Reset</button>
+    <button type='submit'>Submit</button>
+</form>
+<div id='newNotes'></div>
+<div id='test' name='test'></div>
+<hr>
+  
+  <script src="GC.js"></script>
+</body>
+</html>
