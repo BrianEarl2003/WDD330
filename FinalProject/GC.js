@@ -5,16 +5,18 @@ const year = form1.elements.year;
 const day = form1.elements.day;
 const time = form1.elements.time;
 
-const form2 = document.forms.search;
+//const form2 = document.forms.search;
 
-const input = form2.elements.searchInput;
-const notes = form2.elements.notes;
-const subject = form2.elements.subject;
+const input = form1.elements.searchInput;
+const notes = form1.elements.notes;
+const subject = form1.elements.subject;
 
 //const speaker = {};
 //const sessionObject = {};
 
+//let speakerArray = [];
 let speakerArray = loadData();
+
 
 //input.addEventListener('focus', () => alert('focused'), false);
 //input.addEventListener('blur', () => alert('blurred'), false);
@@ -118,22 +120,54 @@ form1.addEventListener('submit', session, false);
 
 function session(event) {
     let session = '';
+    let nameHeading = '';
     event.preventDefault(); // prevent the form from being submitted
-    const sessionObject = {}; // create an empty object
-    sessionObject.season = season.value; // create a name property based on the input field's value
-    sessionObject.year = year.value;
-    sessionObject.day = day.value;
-    sessionObject.time = time.value;
-    speakerArray[speakerArray.length] = sessionObject;
+    const GCobject = {}; // create an empty object
+    GCobject.season = season.value; // create a name property based on the input field's value
+    GCobject.year = year.value;
+    GCobject.day = day.value;
+    GCobject.time = time.value;
+    GCobject.name = input.value; // create a name property based on the input field's value
+    GCobject.note = notes.value;
+    GCobject.subject = subject.value;
+    GCobject.sessionNumber = GCobject.year - 1830;
+    if (GCobject.season == "Spring" && GCobject.day == "Saturday" &&  GCobject.time == "Morning")
+    sessionValue = .111; 
+    if (GCobject.season == "Spring" && GCobject.day == "Saturday" &&  GCobject.time == "Afternoon")
+    sessionValue = .112;
+    if (GCobject.season == "Spring" && GCobject.day == "Saturday" &&  GCobject.time == "Priesthood")
+    sessionValue = .113;
+    if (GCobject.season == "Spring" && GCobject.day == "Saturday" &&  GCobject.time == "Women's")
+    sessionValue = .114;
+    if (GCobject.season == "Spring" && GCobject.day == "Sunday" &&  GCobject.time == "Morning")
+    sessionValue = .121;
+    if (GCobject.season == "Spring" && GCobject.day == "Sunday" &&  GCobject.time == "Afternoon")
+    sessionValue = .122;
+    if (GCobject.season == "Fall" && GCobject.day == "Saturday" &&  GCobject.time == "Morning")
+    sessionValue = .211;
+    if (GCobject.season == "Fall" && GCobject.day == "Saturday" &&  GCobject.time == "Afternoon")
+    sessionValue = .212; 
+    if (GCobject.season == "Fall" && GCobject.day == "Saturday" &&  GCobject.time == "Priesthood")
+    sessionValue = .213; 
+    if (GCobject.season == "Fall" && GCobject.day == "Saturday" &&  GCobject.time == "Women's")
+    sessionValue = .214; 
+    if (GCobject.season == "Fall" && GCobject.day == "Sunday" &&  GCobject.time == "Morning")
+    sessionValue = .221; 
+    if (GCobject.season == "Fall" && GCobject.day == "Sunday" &&  GCobject.time == "Afternoon")
+    sessionValue = .222;     
+    GCobject.id = GCobject.sessionNumber + sessionValue;
+    speakerArray[speakerArray.length] = GCobject;
     let sessionString = JSON.stringify(speakerArray);
     localStorage.setItem('speakerArray',  sessionString);
-    session = '<hr><h2>General Conference ' + (sessionObject.season) + ' ' + (sessionObject.year) + ' ' + (sessionObject.day) + ' ' + (sessionObject.time) + '</h2>'; // convert object to JSON string and display in alert dialog
+    nameHeading = '<hr><h3>' + (GCobject.name) + ' - ' + (GCobject.subject) + '</h3><br><p>' + (GCobject.note) + '</p>';
+    session = '<hr><h2>General Conference ' + (GCobject.season) + ' ' + (GCobject.year) + ' ' + (GCobject.day) + ' ' + (GCobject.time) + '</h2>'; // convert object to JSON string and display in alert dialog
     $('#newNotes').append(session);
+    $('#newNotes').append(nameHeading);
 }
 
-form2.addEventListener('submit', speakerNameNotes, false);
+//form2.addEventListener('submit', speakerNameNotes, false);
 
-function speakerNameNotes(event) {
+/*function speakerNameNotes(event) {
     let nameHeading = '';
     event.preventDefault(); // prevent the form from being submitted
     const speaker = {}; // create an empty object
@@ -147,7 +181,7 @@ function speakerNameNotes(event) {
     localStorage.setItem('speakerArray',  speakerString);
     nameHeading = '<hr><h3>' + (speaker.name) + ' - ' + (speaker.subject) + '</h3><br><p>' + (speaker.note) + '</p>';
     $('#newNotes').append(nameHeading);
-}
+}*/
 
 function loadData() {
     let newArray = localStorage.getItem('speakerArray');
@@ -158,27 +192,37 @@ function loadData() {
         newArray = [];
     }
     return newArray;
+    //speakerArray = newArray;
+    //console.log('speakerArray ' + speakerArray);
+    //callback();
 }
 
-window.addEventListener('load', loadView(speakerArray));
+window.addEventListener('load', loadView());
 
-function loadView(newArray) {
-    let loadInfo = '';
-    for (let i = 0; i < newArray.length; i++) {
-        //console.log(newArray[i].name);
+function loadView() {
+    //loadData();
+    let loadInfo1 = '';
+    let loadInfo2 = '';
+    //for (let i = 0; i < speakerArray.length; i++) {
+        //console.log(speakerArray[i].name);
         //if (newArray[i].season !== undefined && newArray[i].name === undefined) {
-        for (speaker of newArray) {
-            if (newArray[i].name == undefined) {
+        /*for (speaker of speakerArray) {
+            if (speakerArray[i].name) {
                 loadInfo = '<hr><h3>' + speaker.name + ' - ' + speaker.subject + '</h3><br><p>' + speaker.note + '</p>';
                 $('#test').append(loadInfo);
             } 
-        }
-        for (sessionObject of newArray) {
-            if (newArray[i].season == undefined) {
-                loadInfo = '<hr><h2>General Conference ' + sessionObject.season + ' ' + sessionObject.year + ' ' + sessionObject.day + ' ' + sessionObject.time + '</h2>';
-                $('#test').append(loadInfo);
-            }   
+        }*/
+        //loadInfo1 = '<hr><h2>General Conference ' + GCobject.season + ' ' + GCobject.year + ' ' + GCobject.day + ' ' + GCobject.time + '</h2>';
+        let i = 0;
+        for (GCobject of speakerArray) {
+            if (speakerArray[i].id == 190.214) {
+                loadInfo1 = '<hr><h2>General Conference ' + GCobject.season + ' ' + GCobject.year + ' ' + GCobject.day + ' ' + GCobject.time + '</h2>';
+            }
+            loadInfo2 = '<hr><h3>' + GCobject.name + ' - ' + GCobject.subject + '</h3><br><p>' + GCobject.note + '</p>';
+            $('#test').append(loadInfo1);
+            $('#test').append(loadInfo2);
+            i++;
         } 
-        //}
-    }
+    //}
+    //}
 }
