@@ -154,7 +154,9 @@ function session(event) {
     if (GCobject.season == "Fall" && GCobject.day == "Sunday" &&  GCobject.time == "Morning")
     sessionValue = .221; 
     if (GCobject.season == "Fall" && GCobject.day == "Sunday" &&  GCobject.time == "Afternoon")
-    sessionValue = .222;     
+    sessionValue = .222;
+    if (GCobject.season == "Winter" && GCobject.day == "Sunday" &&  GCobject.time == "ChristmasDevotional")
+    sessionValue = .325;     
     GCobject.id = GCobject.sessionNumber + sessionValue;
     speakerArray[speakerArray.length] = GCobject;
     let sessionString = JSON.stringify(speakerArray);
