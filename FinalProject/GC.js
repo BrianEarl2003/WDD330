@@ -215,15 +215,15 @@ function loadView() {
             } 
         }*/
         //loadInfo1 = '<hr><h2>General Conference ' + GCobject.season + ' ' + GCobject.year + ' ' + GCobject.day + ' ' + GCobject.time + '</h2>';
-        let i = 0;
+        //let i = 0;
         for (GCobject of speakerArray) {
-            if (speakerArray[i].id == 190.214) {
+            //if (speakerArray[i].id == 190.214) {
                 loadInfo1 = '<hr><h2>General Conference ' + GCobject.season + ' ' + GCobject.year + ' ' + GCobject.day + ' ' + GCobject.time + '</h2>';
-            }
+            //}
             loadInfo2 = '<hr><h3>' + GCobject.name + ' - ' + GCobject.subject + '</h3><br><p>' + GCobject.note + '</p>';
             $('#test').append(loadInfo1);
             $('#test').append(loadInfo2);
-            i++;
+            //i++;
         } 
     //}
     //}
