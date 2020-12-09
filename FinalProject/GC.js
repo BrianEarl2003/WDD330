@@ -121,6 +121,7 @@ form1.addEventListener('submit', session, false);
 function session(event) {
     let session = '';
     let nameHeading = '';
+    let sessionValue = 0;
     event.preventDefault(); // prevent the form from being submitted
     const GCobject = {}; // create an empty object
     GCobject.season = season.value; // create a name property based on the input field's value
@@ -155,7 +156,7 @@ function session(event) {
     sessionValue = .221; 
     if (GCobject.season == "Fall" && GCobject.day == "Sunday" &&  GCobject.time == "Afternoon")
     sessionValue = .222;
-    if (GCobject.season == "Winter" && GCobject.day == "Sunday" &&  GCobject.time == "ChristmasDevotional")
+    if (GCobject.season == "Winter" && GCobject.day == "Sunday" &&  GCobject.time == "Christmas Devotional")
     sessionValue = .325;     
     GCobject.id = GCobject.sessionNumber + sessionValue;
     speakerArray[speakerArray.length] = GCobject;
@@ -215,16 +216,43 @@ function loadView() {
             } 
         }*/
         //loadInfo1 = '<hr><h2>General Conference ' + GCobject.season + ' ' + GCobject.year + ' ' + GCobject.day + ' ' + GCobject.time + '</h2>';
-        //let i = 0;
-        for (GCobject of speakerArray) {
-            //if (speakerArray[i].id == 190.214) {
-                loadInfo1 = '<hr><h2>General Conference ' + GCobject.season + ' ' + GCobject.year + ' ' + GCobject.day + ' ' + GCobject.time + '</h2>';
-            //}
-            loadInfo2 = '<hr><h3>' + GCobject.name + ' - ' + GCobject.subject + '</h3><br><p>' + GCobject.note + '</p>';
-            $('#test').append(loadInfo1);
-            $('#test').append(loadInfo2);
-            //i++;
-        } 
+        let i = 0;
+        selectionSort(speakerArray);
+        if (speakerArray.length != 0) {
+            let lastId;
+            for (GCobject of speakerArray) {
+                console.log('speakerArray[' + i + '].id: ' + speakerArray[i].id);
+                //if (i == speakerArray.length || (i < speakerArray.length && speakerArray[i+1].id != speakerArray[i].id))
+                if (i === 0 || speakerArray[i].id !== lastId) {
+                    loadInfo1 = '<hr><h2>General Conference ' + GCobject.season + ' ' + GCobject.year + ' ' + GCobject.day + ' ' + GCobject.time + '</h2>';
+                    lastId = speakerArray[i].id;
+                    console.log('current last id [' + i + ']: ' + lastId);
+                    $('#test').append(loadInfo1);
+                }
+                loadInfo2 = '<hr><h3>' + GCobject.name + ' - ' + GCobject.subject + '</h3><br><p>' + GCobject.note + '</p>';
+                $('#test').append(loadInfo2);
+                i++;
+            } 
+        }
     //}
     //}
+}
+
+function selectionSort(arr) {
+    let min;
+    for (let i = 0; i < arr.length; i++) {
+        // Assume a minimum value        
+        min = i;
+        for (let j = i + 1; j < arr.length; j++) {
+            if (arr[j].id < arr[min].id) {
+                min = j;
+            }
+        }
+      
+        // Swap if new minimun value found
+        if (min !== i) {
+          [arr[i], arr[min]] = [arr[min], arr[i]];
+        }
+    }
+    return arr;
 }
