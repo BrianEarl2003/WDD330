@@ -1,44 +1,137 @@
 body {
     background-color: black;
+    margin: auto;
+    width: 90%;
 }
 
 header {
-    text-align: center;  
-    align-items: center; 
-    margin-left: 10%;
-    margin-right: 10%; 
+    align-items: center;
+    margin-bottom: 20px;
+    margin-top: 20px;
+    display: grid;
+    grid-template-columns: auto auto auto;
 }
 
-header, h3, h2, p {
+#tabernacle {
+    justify-self: left;
+    width: auto;
+    height: 85%;
+}
+
+#temple {
+    justify-self: right;
+    width: auto;
+    height: 110%;
+}
+
+h1 {
+    justify-self: center;
+}
+
+header, h2, #talk, .comments {
     background-image: url("https://scienceatl.org/wp-content/uploads/2018/07/heading-background.jpg");
     border: 1px solid black;
-    border-radius: 30px;
-    color: white;
-    display: inline-block;
-    padding: 2%;
+    color:white;
 }
 
-h3, h2, p {
+h2, #talk, .comments {
+    margin: 10px;
     white-space: pre-wrap;
 }
 
+h2 {
+    text-align: center;
+}
+
 h2, header {
+    border-radius: 30px;
     color: black;
     font-weight: bold;
     border: 2px solid white;
 }
 
-#searchButton {
-    width: 20%;
-    height: 20%;
-    margin-top: -30px;
-    margin-bottom: -35px;
-}
-
 form {
-    display: inline-block;
+    border: 5px solid lightblue;
+    text-align: center;
+    margin-bottom: 20px;
 }
 
-label {
-    color: white;
+#formTitle {
+    color:  lightblue;
+    border-bottom: 5px solid  lightblue;
+}
+
+#newNotes {
+    border: 5px solid rgb(41, 154, 192);
+    margin-bottom: 20px;
+}
+
+#test {
+    border: 5px solid rgb(13, 93, 119);
+    margin-bottom: 20px;
+}
+
+#nnTitle {
+    text-align: center;
+    color:   lightblue;
+    border-bottom: 5px solid  rgb(41, 154, 192);
+}
+
+#tTitle {
+    text-align: center;
+    color:     lightblue;
+    border-bottom: 5px solid   rgb(13, 93, 119);
+}
+
+h3 {
+    text-decoration: underline;
+    text-align: center;
+    grid-column-start: span 4;
+}
+
+#notes {
+    white-space: pre-wrap;
+    grid-column-start: span 4;
+}
+
+.info {
+    white-space: pre-wrap;
+    font-size: x-small;
+    color: black;
+}
+
+.right {
+    grid-column: 4 / 4;
+    width: 40px;
+    justify-self: end;
+}
+
+#talk {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    grid-template-rows: auto auto auto;
+}
+
+#buttonsAlert {
+    display: grid;
+    grid-template-columns: 50% 60px auto;
+}
+
+#reset {
+    width: 50px;
+    justify-self: end;
+}
+
+#submit {
+    width: 60px;
+}
+
+#alert {
+    color: red;
+    width: 130px;
+    justify-self: left;
+}
+
+.commentBox {
+    width: 50%;
 }

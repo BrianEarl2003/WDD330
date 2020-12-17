@@ -3,7 +3,9 @@
 
 <head>
   <meta charset="utf-8" />
-  <title>General Conference Fall 2020 Notes</title>
+  <title>General Conference Notetaker</title>
+  <!--Google Icons-->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
   <!--CSS modifications-->
   <link rel="stylesheet" type="text/css" href="GCnotes.css">
   <!--Bootstrap and JQuery-->
@@ -11,36 +13,67 @@
 </head>
 
 <body>
+<!--Title and images-->
   <header>
-    <h1>Brian Earl's<br> General Conference Notes</h1>
+    <img id="temple" src='lds-temple-silhouette-1.png'>
+    <h1>General Conference Notetaker</h1>
+    <img id="tabernacle" src='https://vignette.wikia.nocookie.net/when-the-cold-breeze-blows-away/images/7/71/Mormon_Tabernacle_Choir.png/revision/latest?cb=20190107205150'>
   </header>
-  <hr>
-  <form name='session' id='session'>
-    <label>General Conference Session<select name ='season' id='season'>
-      <option value='Spring'>Spring</option>
-      <option value='Fall'>Fall</option>
-      <option value='Winter'>Winter</option></label>
-    <input name='year' id='year' type='number' value='2020'>
-    <select name='day' id='day'>
-      <option value='Saturday'>Saturday</option>
-      <option value='Sunday'>Sunday</option></select>
-    <select name='time' id='time'>
-      <option value='Morning'>Morning</option>
-      <option value='Afternoon'>Afternoon</option>
-      <option value='Priesthood'>Priesthood</option>
-      <option value="Women's">Women's</option>
-      <option value='Christmas Devotional'>Christmas Devotional</option></select>
-    <!--button type='submit'>Create New Session</button></form--><br>
-    <!--form name='search' id='search' action='/search'-->
-    <input name='searchInput' id='searchInput' placeholder="Name of Speaker">
-    <input name='subject' id='subject' placeholder="Subject"><br>
-    <textarea name='notes' id='notes' placeholder="Write notes here" rows='10' cols='130'></textarea><br>
-    <button type='reset'>Reset</button>
-    <button type='submit'>Submit</button>
-</form>
-<div id='newNotes'></div>
-<div id='test' name='test'></div>
-<hr>
+<!--Session and Talk Form-->
+  <div id='submitForm'>
+    <form name='session' id='session'>
+      <div id="formTitle">General Conference Session & Talk</div>
+      <select name ='season' id='season'>
+        <option value='Spring'>Spring</option>
+        <option value='Fall'>Fall</option>
+        <option value='Winter'>Winter</option>
+      <input name='year' id='year' type='number' value='2020' min='1830' step='1' required>
+      <select name='day' id='day'>
+        <option value='Saturday'>Saturday</option>
+        <option value='Sunday'>Sunday</option></select>
+      <select name='time' id='time'>
+        <option value='Morning'>Morning</option>
+        <option value='Afternoon'>Afternoon</option>
+        <option value='Priesthood'>Priesthood</option>
+        <option value="Women's">Women's</option>
+        <option value='Christmas Devotional'>Christmas Devotional</option>
+      </select><br>
+      <input name='searchInput' list='searchInput' placeholder="Name of Speaker" type="text" required>
+      <datalist class="form-control" id="searchInput">
+        <option value="Russell M. Nelson">
+        <option value="Dallin H. Oaks">
+        <option value="Henry B. Eyring">
+        <option value="M. Russell Ballard">
+        <option value="Jeffrey R. Holland">
+        <option value="Dieter F. Uchtdorf">
+        <option value="David A. Bednar">
+        <option value="Quentin L. Cook">
+        <option value="D. Todd Christofferson">
+        <option value="Neil L. Andersen">
+        <option value="Ronald A. Rasband">
+        <option value="Gary E. Stevenson">
+        <option value="Dale G. Renlund">
+        <option value="Gerrit W. Gong">
+        <option value="Ulisses Soares">
+      </datalist>    
+      <input name='subject' id='subject' placeholder="Subject" required>
+      <input name='username' id='username' placeholder="Username" required><br>
+      <textarea name='notes' id='notes' placeholder="Write notes here" rows='8' cols='74'></textarea><br>
+      <div id="buttonsAlert">
+        <button id="reset" type='reset'>Reset</button>
+        <button id="submit" type='submit'>Submit</button>
+        <div id="alert"></div>
+      </div>
+    </form>
+  </div>
+<!--New Notes-->
+  <div id='newNotes'>
+    <div id='nnTitle'>New Notes</div>
+  </div>
+<!--Saved Notes-->
+  <div id='test' name='test'>
+    <div id='tTitle'>Saved Notes</div>
+  </div>
   
   <script src="GC.js"></script>
 </body>

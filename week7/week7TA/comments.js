@@ -57,7 +57,3 @@ function renderComment(comment) {
   <p class="comment">${comment.content}</p>`;
   return item;
 }
-
-function renderCommentsHike(comment) {
-
-}
