@@ -147,7 +147,7 @@ function viewComments(i) {
  * Erases all notes and comments from the screen
  *************************************************************/
 function resetElements() {
-    let text1 = '<div id="nnTitle">New Notes</div>';
+    let text1 = '<div id="nnTitle"><button onclick="reload()">View <u>New Notes</u> as Saved Notes</button></div>';
     let text2 = '<div id="tTitle">Saved Notes</div>';
     $('#test').html(text2);
     $('#newNotes').html(text1);
@@ -300,4 +300,11 @@ function addComment(talkIndex){
     saveLocalStorage(comments);
     console.log(comments);
     viewComments(talkIndex);
+}
+/*************************************************************
+ * Reload
+ * Reloads the page
+ *************************************************************/
+function reload() {
+    location.reload();
 }
