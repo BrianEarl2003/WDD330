@@ -5,7 +5,8 @@ body {
 }
 
 header {
-    align-items: center;
+    height: 120px;
+    align-items: initial;
     margin-bottom: 20px;
     margin-top: 20px;
     display: grid;
@@ -15,17 +16,20 @@ header {
 #tabernacle {
     justify-self: left;
     width: auto;
-    height: 85%;
+    height: 15%;
+    margin-top: 10px;
+    margin-right: 10px;
 }
 
 #temple {
     justify-self: right;
     width: auto;
-    height: 110%;
+    height: 18%;
 }
 
 h1 {
     justify-self: center;
+    text-align: center;
 }
 
 header, h2, #talk, .comments {
